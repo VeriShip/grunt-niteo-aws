@@ -1,19 +1,23 @@
 language: node_js
+language: node_js
 node_js:
-  - '0.10'
+- '0.10'
+- '0.11'
+- '0.12'
+- '4.0'
+- '4.1'
 before_script:
-  - npm install -g grunt-cli
-  - npm install
+- npm install
 script:
-  - grunt
+- npm run build
 deploy:
+  skip_cleanup: true
   provider: npm
   email: npm@niteoholdings.com
-  skip_cleanup: true
   api_key:
-    secure: "BbjhhB504nlHST3rXLEw8ixsf/MycPddbEBu8O3c1eRIMrxyJVSP4PhTG9WFZmPwLhjgcFNh5inNfczcYwAukYIR7YxTzwR4Wcb29R83ffInsmuwVdxK3bSRc0dcy6+UP16Gwg1nv3CuPjRLur/6bSDXoVvl7/U//m4bj+qRG1k="
+    secure: N3VdJy5D2gxAfY3o8V4JtN1tyC8XqCvJofNmGDMwFl9gVp/CIzaiaKFdZBwNKHmvS4t3g6EsVbJPlkTsec4PbX75Y8F/c2Hdk8inu/SEQoYydePUdsE+KJkLKAVue57mLV+4MzLSz6loAGjMpwuBluaCZ4G7K1T67v5PEt5TTpo=
   on:
-    tags: true
     all_branches: true
-    repo: NiteoSoftware/grunt-niteo-aws
-
+    tags: true
+    repo: VeriShip/grunt-niteo-aws
+    node: '4.1'
